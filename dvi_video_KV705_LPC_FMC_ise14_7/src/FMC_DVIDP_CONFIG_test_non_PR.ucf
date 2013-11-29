@@ -1,0 +1,135 @@
+#Basic Constraint file Example
+#--------------------------------------------------------------
+NET "CLK_P" TNM_NET = "SYS_CLK";
+TIMESPEC "TS_SYS_CLK" = PERIOD "SYS_CLK" 5 ns HIGH 50 %;
+NET "CLK_P"  LOC = "AD12" | IOSTANDARD = LVDS;
+NET "CLK_N"  LOC = "AD11" | IOSTANDARD = LVDS;
+NET "FAN_PWM"  LOC = "L26" | IOSTANDARD = LVCMOS25;
+#--------------------------------------------------------------
+###########################################
+# FMC-DVIDP - I2C
+###########################################
+ #(LA09_N)
+NET "fmc_dvidp_i2c_scl" LOC =  "AK24" | IOSTANDARD = LVCMOS25; 
+ #(LA09_P)
+NET "fmc_dvidp_i2c_sda" LOC =  AK23 | IOSTANDARD = LVCMOS25; 
+ #(LA12_P)
+NET "fmc_dvidp_i2c_rst" LOC =  AA20 | IOSTANDARD = LVCMOS25; 
+
+
+NET "fmc_power_good" LOC =  H29 | IOSTANDARD = LVCMOS25 ; 
+ #(LA05_P)
+NET "fmc_dvidp_tp1" LOC =  AG22 | IOSTANDARD = LVCMOS25 ; 
+ #(LA05_N)
+NET "fmc_dvidp_tp2" LOC =  AH22 | IOSTANDARD = LVCMOS25 ; 
+ #(LA10_P)
+NET "fmc_dvidp_tp3" LOC =  AJ24 | IOSTANDARD = LVCMOS25 ; 
+
+###########################################
+# FMC-DVIDP - DVI Input
+###########################################
+NET "fmc_dvidp_dvii_clk" TNM_NET = "VID_CLK";
+TIMESPEC "TS_VID_CLK" = PERIOD "VID_CLK" 5.5 ns HIGH 50 %;
+ #(LA17_CC_P)
+NET "fmc_dvidp_dvii_clk" LOC =  AB27 | IOSTANDARD = LVCMOS25; 
+ #(LA10_N)
+NET "fmc_dvidp_dvii_de" LOC =  AK25 | IOSTANDARD = LVCMOS25; 
+ #(LA12_N)
+NET "fmc_dvidp_dvii_vsync" LOC =  AB20 | IOSTANDARD = LVCMOS25; 
+ #(LA11_P)
+NET "fmc_dvidp_dvii_hsync" LOC =  AE25 | IOSTANDARD = LVCMOS25; 
+ #(LA25_P)
+NET "fmc_dvidp_dvii_blue[0]" LOC =  AC26 | IOSTANDARD = LVCMOS25; 
+ #(LA21_N)
+NET "fmc_dvidp_dvii_blue[1]" LOC =  AG28 | IOSTANDARD = LVCMOS25; 
+ #(LA26_P)
+NET "fmc_dvidp_dvii_blue[2]" LOC =  AK29 | IOSTANDARD = LVCMOS25; 
+ #(LA27_P)
+NET "fmc_dvidp_dvii_blue[3]" LOC =  AJ28 | IOSTANDARD = LVCMOS25; 
+ #(LA23_N)
+NET "fmc_dvidp_dvii_blue[4]" LOC =  AH27 | IOSTANDARD = LVCMOS25; 
+ #(LA22_N)
+NET "fmc_dvidp_dvii_blue[5]" LOC =  AK28 | IOSTANDARD = LVCMOS25; 
+ #(LA22_P)
+NET "fmc_dvidp_dvii_blue[6]" LOC =  AJ27 | IOSTANDARD = LVCMOS25; 
+ #(LA21_P)
+NET "fmc_dvidp_dvii_blue[7]" LOC =  AG27 | IOSTANDARD = LVCMOS25; 
+ #(LA19_N)
+NET "fmc_dvidp_dvii_green[0]" LOC =  AK26 | IOSTANDARD = LVCMOS25; 
+ #(LA23_P)
+NET "fmc_dvidp_dvii_green[1]" LOC =  AH26 | IOSTANDARD = LVCMOS25; 
+ #(LA18_CC_P)
+NET "fmc_dvidp_dvii_green[2]" LOC = AD27 | IOSTANDARD = LVCMOS25 ; 
+ #(LA17_CC_N)
+NET "fmc_dvidp_dvii_green[3]" LOC = AC27 | IOSTANDARD = LVCMOS25 ; 
+ #(LA20_N)
+NET "fmc_dvidp_dvii_green[4]" LOC =  AF27 | IOSTANDARD = LVCMOS25; 
+ #(LA20_P)
+NET "fmc_dvidp_dvii_green[5]" LOC =  AF26 | IOSTANDARD = LVCMOS25; 
+ #(LA19_P)
+NET "fmc_dvidp_dvii_green[6]" LOC =  AJ26 | IOSTANDARD = LVCMOS25; 
+ #(LA15_N)
+NET "fmc_dvidp_dvii_green[7]" LOC =  AD24 | IOSTANDARD = LVCMOS25; 
+ #(LA15_P)
+NET "fmc_dvidp_dvii_red[0]" LOC =  AC24 | IOSTANDARD = LVCMOS25; 
+ #(LA16_N)
+NET "fmc_dvidp_dvii_red[1]" LOC =  AD22 | IOSTANDARD = LVCMOS25; 
+ #(LA14_N)
+NET "fmc_dvidp_dvii_red[2]" LOC =  AE21 | IOSTANDARD = LVCMOS25; 
+ #(LA14_P)
+NET "fmc_dvidp_dvii_red[3]" LOC =  AD21 | IOSTANDARD = LVCMOS25; 
+ #(LA13_N)
+NET "fmc_dvidp_dvii_red[4]" LOC =  AC25 | IOSTANDARD = LVCMOS25; 
+ #(LA16_P)
+NET "fmc_dvidp_dvii_red[5]" LOC =  AC22 | IOSTANDARD = LVCMOS25; 
+ #(LA11_N)
+NET "fmc_dvidp_dvii_red[6]" LOC =  AF25 | IOSTANDARD = LVCMOS25; 
+ #(LA13_P)
+NET "fmc_dvidp_dvii_red[7]" LOC =  AB24 | IOSTANDARD = LVCMOS25; 
+###########################################
+# FMC-DVIDP - DVI Output
+###########################################
+# FMC1 - C23 (LA18_N_CC)
+NET "fmc_dvidp_dvio_clk" LOC = AD28 | IOSTANDARD = LVCMOS25; 
+# FMC1 - G37 (LA33_N)
+NET "fmc_dvidp_dvio_reset_n" LOC = AC30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H35 (LA30_N)
+NET "fmc_dvidp_dvio_de" LOC = AB30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G36 (LA33_P)
+NET "fmc_dvidp_dvio_vsync" LOC = AC29 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H37 (LA32_P)
+NET "fmc_dvidp_dvio_hsync" LOC = Y30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G34 (LA31_N)
+NET "fmc_dvidp_dvio_data[0]" LOC = AE29 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G33 (LA31_P)
+NET "fmc_dvidp_dvio_data[1]" LOC = AD29 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H34 (LA30_P)
+NET "fmc_dvidp_dvio_data[2]" LOC = AB29 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H32 (LA28_N)
+NET "fmc_dvidp_dvio_data[3]" LOC = AF30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G31 (LA29_N)
+NET "fmc_dvidp_dvio_data[4]" LOC = AF28 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G30 (LA29_P)
+NET "fmc_dvidp_dvio_data[5]" LOC = AE28 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H31 (LA28_P)
+NET "fmc_dvidp_dvio_data[6]" LOC = AE30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H29 (LA24_N)
+NET "fmc_dvidp_dvio_data[7]" LOC = AH30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - H28 (LA24_P)
+NET "fmc_dvidp_dvio_data[8]" LOC = AG30 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - G28 (LA25_N)
+NET "fmc_dvidp_dvio_data[9]" LOC = AD26 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - C27 (LA27_N)
+NET "fmc_dvidp_dvio_data[10]" LOC = AJ29 | IOSTANDARD = LVCMOS25 ; 
+# FMC1 - D27 (LA26_N)
+NET "fmc_dvidp_dvio_data[11]" LOC = AK30 | IOSTANDARD = LVCMOS25 ; 
+
+# Bank  18 VCCO - VADJ_FPGA - IO_0_18
+NET  reset_pin   LOC = G12  | IOSTANDARD=LVCMOS25; 
+
+
+
+INST "U_PR" AREA_GROUP = "pblock_U_PR";
+AREA_GROUP "pblock_U_PR" RANGE=SLICE_X38Y50:SLICE_X76Y99;
+# (FOR PR ONLY) AREA_GROUP "pblock_U_PR" RESET_AFTER_RECONFIG=TRUE;
+# (FOR PR ONLY) AREA_GROUP "pblock_U_PR" INCLUSIVE=ROUTE;

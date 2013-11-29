@@ -1,0 +1,23 @@
+set -tmpdir ./
+set -xsthdpdir ./
+run
+-ifn video_filter_PR.prj
+-ofn video_filter_PR
+-top video_filter_PR
+-p xc7k325t-2-ffg900
+-work_lib xst_work_lib
+-ofmt NGC
+-ifmt mixed
+-opt_mode Speed
+-opt_level 2
+-iuc NO
+-keep_hierarchy YES
+-rtlview Yes
+-glob_opt AllClockNets
+-read_cores OPTIMIZE
+-write_timing_constraints NO
+-cross_clock_analysis NO
+-hierarchy_separator /
+-bus_delimiter <>
+-case maintain
+-iobuf NO

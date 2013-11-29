@@ -1,0 +1,15 @@
+run
+-ifn FMC_DVIDP_CONFIG_test.prj
+-ofn synth_results/FMC_DVIDP_CONFIG_test
+-top FMC_DVIDP_CONFIG_test
+-p xc7k325t-2-ffg900
+-sd {../coregen edk_results/implementation ../synth_results} 
+-ifmt mixed
+-opt_mode Speed
+-opt_level 2
+-keep_hierarchy YES
+-read_cores YES
+-iobuf YES
+-max_fanout 500
+-register_duplication YES
+-iob auto

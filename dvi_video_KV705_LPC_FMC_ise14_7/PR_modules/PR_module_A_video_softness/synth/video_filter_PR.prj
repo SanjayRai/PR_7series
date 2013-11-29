@@ -1,0 +1,2 @@
+vhdl work "../src/moving_average.vhd"
+vhdl work "../src/video_filter_PR.vhd"

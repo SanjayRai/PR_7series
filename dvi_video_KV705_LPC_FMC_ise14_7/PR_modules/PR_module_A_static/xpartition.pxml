@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Project Name="FMC_DVIDP_CONFIG_test" FileVersion="1.2" ProjectVersion="2.0">
+	<Partition Name="/FMC_DVIDP_CONFIG_test" State="implement" ImportLocation="NONE">
+		<Partition Name="/FMC_DVIDP_CONFIG_test/U_PR" State="implement" ImportLocation="none" ImportTag="none" Preserve="routing" Reconfigurable="true" ReconfigModuleName="RM_static">
+		</Partition>
+	</Partition>
+</Project>

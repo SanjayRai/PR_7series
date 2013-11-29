@@ -1,0 +1,89 @@
+# Created : 13:18:43, Tue Oct 2, 2012 : Sanjay Rai
+set PRD 5.0
+set PRD_2 [expr $PRD/2]
+create_clock -period $PRD -name sys_clk -waveform "0 $PRD_2" [get_ports CLK_P]
+
+
+set_property IOSTANDARD LVDS [get_ports {CLK_*}]
+
+set_property PACKAGE_PIN AD12 [get_ports {CLK_P}]
+set_property PACKAGE_PIN AD11 [get_ports {CLK_N}]
+set_property PACKAGE_PIN L26 [get_ports {FAN_PWM}]
+set_property IOSTANDARD LVCMOS18 [get_ports {FAN_PWM}]
+
+set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
+
+set_property IOSTANDARD LVCMOS25 [get_ports {fmc_dvidp_*}]
+
+###########################################
+# FMC-DVIDP - I2C
+###########################################
+ #(LA09_N)
+set_property PACKAGE_PIN A30  [get_ports { fmc_dvidp_i2c_scl}]  
+ #(LA09_P)
+set_property PACKAGE_PIN B30  [get_ports { fmc_dvidp_i2c_sda}] 
+ #(LA12_P)
+set_property PACKAGE_PIN C29  [get_ports { fmc_dvidp_i2c_rst}] 
+
+
+
+###########################################
+# FMC-DVIDP - DVI Input
+###########################################
+create_clock -period 5.5 -name vid_clk -waveform "0 2.75" [get_ports fmc_dvidp_dvii_clk]
+ #(LA17_CC_P)
+set_property PACKAGE_PIN F20  [get_ports {fmc_dvidp_dvii_clk}]     
+ #(LA10_N)
+set_property PACKAGE_PIN C30  [get_ports {fmc_dvidp_dvii_de}]      
+ #(LA12_N)
+set_property PACKAGE_PIN B29  [get_ports {fmc_dvidp_dvii_vsync}]   
+ #(LA11_P)
+set_property PACKAGE_PIN G27  [get_ports {fmc_dvidp_dvii_hsync}]   
+ #(LA25_P)
+set_property PACKAGE_PIN G17  [get_ports {fmc_dvidp_dvii_blue[0]}] 
+ #(LA21_N)
+set_property PACKAGE_PIN A21  [get_ports {fmc_dvidp_dvii_blue[1]}] 
+ #(LA26_P)
+set_property PACKAGE_PIN B18  [get_ports {fmc_dvidp_dvii_blue[2]}] 
+ #(LA27_P)
+set_property PACKAGE_PIN C19  [get_ports {fmc_dvidp_dvii_blue[3]}] 
+ #(LA23_N)
+set_property PACKAGE_PIN A22  [get_ports {fmc_dvidp_dvii_blue[4]}] 
+ #(LA22_N)
+set_property PACKAGE_PIN B20  [get_ports {fmc_dvidp_dvii_blue[5]}] 
+ #(LA22_P)
+set_property PACKAGE_PIN C20  [get_ports {fmc_dvidp_dvii_blue[6]}] 
+ #(LA21_P)
+set_property PACKAGE_PIN A20  [get_ports {fmc_dvidp_dvii_blue[7]}] 
+ #(LA19_N)
+set_property PACKAGE_PIN F18  [get_ports {fmc_dvidp_dvii_green[0]}]
+ #(LA23_P)
+set_property PACKAGE_PIN B22  [get_ports {fmc_dvidp_dvii_green[1]}]
+ #(LA18_CC_P)
+set_property PACKAGE_PIN F21  [get_ports {fmc_dvidp_dvii_green[2]}]
+ #(LA17_CC_N)
+set_property PACKAGE_PIN E20  [get_ports {fmc_dvidp_dvii_green[3]}]
+ #(LA20_N)
+set_property PACKAGE_PIN D19  [get_ports {fmc_dvidp_dvii_green[4]}]
+ #(LA20_P)
+set_property PACKAGE_PIN E19  [get_ports {fmc_dvidp_dvii_green[5]}]
+ #(LA19_P)
+set_property PACKAGE_PIN G18  [get_ports {fmc_dvidp_dvii_green[6]}]
+ #(LA15_N)
+set_property PACKAGE_PIN B24  [get_ports {fmc_dvidp_dvii_green[7]}]
+ #(LA15_P)
+set_property PACKAGE_PIN C24  [get_ports {fmc_dvidp_dvii_red[0]}]  
+ #(LA16_N)
+set_property PACKAGE_PIN A27  [get_ports {fmc_dvidp_dvii_red[1]}]  
+ #(LA14_N)
+set_property PACKAGE_PIN A28  [get_ports {fmc_dvidp_dvii_red[2]}]  
+ #(LA14_P)
+set_property PACKAGE_PIN B28  [get_ports {fmc_dvidp_dvii_red[3]}]  
+ #(LA13_N)
+set_property PACKAGE_PIN A26  [get_ports {fmc_dvidp_dvii_red[4]}]  
+ #(LA16_P)
+set_property PACKAGE_PIN B27  [get_ports {fmc_dvidp_dvii_red[5]}]  
+ #(LA11_N)
+set_property PACKAGE_PIN F27  [get_ports {fmc_dvidp_dvii_red[6]}]  
+ #(LA13_P)
+set_property PACKAGE_PIN A25  [get_ports {fmc_dvidp_dvii_red[7]}]  
